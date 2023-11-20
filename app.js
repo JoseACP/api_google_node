@@ -1,20 +1,15 @@
 const express = require('express');
 const axios = require('axios');
-const fs = require('fs').promises;
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Definir directamente la clave de la API y el ID del motor de búsqueda
+const API_KEY = 'AIzaSyCODK0saQZqsqBEj79K4LdHhfRnBCCtLMY';
+const SEARCH_ENGINE_ID = 'b17fbdaa36fa64324';
+
 app.get('/buscar_ciberseguridad', async (req, res) => {
     try {
-        // Leer la clave de la API desde un archivo
-        const api_key_file = 'C:\\Users\\x1\\Desktop\\api_google_node\\API_KEY.txt';
-        const API_KEY = await fs.readFile(api_key_file, 'utf-8');
-
-        // Leer el ID del motor de búsqueda desde un archivo
-        const search_engine_id_file = 'C:\\Users\\x1\\Desktop\\api_google_node\\SEARCH_ENGINE_ID.txt';
-        const SEARCH_ENGINE_ID = await fs.readFile(search_engine_id_file, 'utf-8');
-
         // Términos de búsqueda
         const search_query = 'ciberseguridad';
 
